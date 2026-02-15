@@ -1,51 +1,63 @@
-# Dynamic Gallery Image Rendering for GitHub Pages
+
+# Dynamic Gallery for GitHub Pages
+
+This project uses a simple, DRY workflow for a dynamic image gallery and slideshow:
+
+## How to Use
+
+1. **Add or Remove Images**
+   - Place new images in `assets/images`.
+   - Remove unwanted images from `assets/images`.
 
 
-This project uses a single, DRY workflow for your gallery:
+2. **Sync and Edit the Image List**
+    - Run:
+       ```sh
+       node assets/js/generate-gallery-json.js
+       ```
+    - This updates `gallery-images.json` to match your images folder. Existing metadata (title, medium, size, price, availability) is preserved.
+    - **Edit `gallery-images.json` manually in your code editor to add, update, or remove info for each image.**
+       - Each image is an object with these fields:
+          - `filename`: The exact name of the image file in `assets/images` (do not change unless you rename the file).
+          - `title`: The artwork title (appears first in the slideshow label).
+          - `medium`: (Optional) The medium, e.g., "Oil on canvas".
+          - `size`: (Optional) The size, e.g., "12\"x12\" in".
+          - `price`: (Optional) The price, e.g., "$1000".
+          - `availability`: (Optional) e.g., "Available", "Sold", etc.
+       - Example:
+          ```json
+          {
+             "filename": "Brendas_Garden.jpg",
+             "title": "Brendas Garden",
+             "medium": "Charcoal on paper",
+             "size": "12\"x12\" in",
+             "price": "$1000",
+             "availability": "Available"
+          }
+          ```
+       - **To add a label:** Fill in or edit any of the fields for an image object. Leave a field blank if you do not want it to appear.
+       - **To remove a label:** Delete the value for that field (e.g., set "medium": "").
+       - **Order matters:** The order of objects in `gallery-images.json` determines the order of images in the gallery and slideshow.
+       - **Do not remove the filename field or change its value unless you rename the actual image file.**
 
-- `gallery-images.json` is the only file you need to maintain for your image list and metadata (title, medium, size, price, availability).
-- `assets/js/generate-gallery-json.js` is a helper script to auto-generate a basic `gallery-images.json` (with filenames and auto-titles) by scanning your images folder. Run this when you add/remove images, then fill in or edit metadata as needed.
-- `assets/js/script.js` is the only JavaScript loaded on your gallery page. It handles all dynamic rendering for both the grid and the slideshow info.
-
-**You do not need any other gallery scripts.**
+3. **Deploy**
+   - Commit and push your changes (including `gallery-images.json`) to GitHub.
+   - Your gallery and slideshow will update automatically on your site.
 
 ## How It Works
 
+- `gallery-images.json` is the single source of truth for your gallery images and their info.
+- `assets/js/generate-gallery-json.js` keeps your JSON in sync with your images folder, without erasing your metadata.
+- `assets/js/script.js` is the only gallery JavaScript. It:
+  - Renders the grid from `gallery-images.json`.
+  - Shows all image info in the slideshow overlay (one line, plus a contact link).
 
-1. **Image List & Metadata**
-   - Maintain all your image info in `gallery-images.json` (array of objects: filename, title, medium, size, price, availability).
-   - When you add or remove images, run `node assets/js/generate-gallery-json.js` to refresh the list, then fill in or edit metadata as needed.
-
-2. **Dynamic Rendering**
-   - The gallery grid is rendered from `gallery-images.json` by `assets/js/script.js`.
-   - The slideshow overlay displays all metadata for each image, but the grid remains clean.
-
-## Usage Instructions
-
-### 1. Add or Remove Images
-- Place new image files in `assets/images`.
-- Remove any images you no longer want from the same folder.
-
-
-### 2. Generate or Refresh the Image List
-- Open a terminal in your project root.
-- Run:
-   ```sh
-   node assets/js/generate-gallery-json.js
-   ```
-- This will create or update `gallery-images.json` with the current image filenames and auto-generated titles. You can then fill in or edit the metadata fields as needed.
-
-### 3. Deploy to GitHub Pages
-- Commit and push your changes (including `gallery-images.json`) to your repository.
-- Your gallery will now reflect the updated images on your GitHub Pages site.
-
-
-## Notes
-- You must have Node.js installed to run the script.
-- Always rerun the script after adding or removing images before deploying, and update metadata in `gallery-images.json` as needed.
-- If you want to change the supported image types, edit the `validExtensions` array in the script.
-- Only `script.js` is used for gallery logic—no other gallery scripts are needed.
+## Tips
+- Only edit `gallery-images.json` for image info—no need to touch HTML or JS for content changes.
+- Always rerun the script after adding/removing images, then update metadata as needed.
+- To change supported image types, edit `validExtensions` in the script.
+- You only need `script.js` for gallery logic—no other gallery scripts are required.
 
 ---
 
-For any issues, please open an issue on the repository.
+For help, open an issue on the repository.
