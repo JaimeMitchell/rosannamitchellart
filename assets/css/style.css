@@ -1,0 +1,215 @@
+/*
+Theme Name: Rosanna Mitchell HTML
+Description: Static HTML version of the artist site
+*/
+
+/* Base Styles */
+body, h1, h2, h3, h4, h5, h6, p, a, li, button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;  /* thin/light */
+    line-height: 1.5;
+    color: #313131;
+}
+
+body {
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+.main-menu-toggle {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;             
+    box-sizing: border-box;
+}
+
+.hero img {
+    width: auto;               
+    max-width: 92%;           
+    max-height: 68vh;         
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+    object-fit: contain;
+}
+
+/* Hero Responsive */
+@media (max-width: 1024px) {
+    .hero img {
+        max-height: 63vh;     
+        max-width: 96%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero img {
+        max-height: 53vh;     
+        max-width: 96%;
+    }
+}
+
+/* Art Grid (Gallery) */
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns desktop */
+    gap: 20px;
+    padding: 20px;
+}
+
+.art-box {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* square */
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f0f0;
+}
+
+.art-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.art-box img:hover {
+    transform: scale(1.05);
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+    .art-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 768px) {
+    .art-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Slideshow Overlay */
+.slideshow-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #313131;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.slideshow-overlay img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.5);
+}
+
+/* Close button */
+.slideshow-overlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Navigation buttons */
+.slideshow-overlay .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 20px;
+}
+
+.slideshow-overlay .prev {
+    left: 10px;
+}
+
+.slideshow-overlay .next {
+    right: 10px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .main-menu-toggle {
+        display: block;
+    }
+}
