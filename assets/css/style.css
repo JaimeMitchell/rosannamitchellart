@@ -167,25 +167,28 @@ footer {
 }
 
 .slideshow-overlay img {
-    max-width: 95%;
-    max-height: 70vh;
+    max-width: 99vw;
+    max-height: 93vh;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.5);
     display: block;
-    margin: 0 auto;
+    margin: 24px auto 0 auto;
 }
+
+
 
 #slideshow-info-label {
     font-family: inherit;
     font-size: 1.1em;
     color: #fff;
     text-align: center;
-    margin-top: 18px;
-    margin-bottom: 10px;
-    max-width: 90vw;
+    margin-top: 6px;
+    margin-bottom: 2px;
+    max-width: 99vw;
     word-break: break-word;
     background: none;
+    padding: 0 4px;
 }
 
 /* Close button */

@@ -86,21 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (imgObj.size && imgObj.size.trim()) infoParts.push(imgObj.size);
     if (imgObj.price && imgObj.price.trim()) infoParts.push(imgObj.price);
     if (imgObj.availability && imgObj.availability.trim()) infoParts.push(imgObj.availability);
+    // Add purchase link at the end
     const infoLine = infoParts.join(', ');
-    // Info line
-    label.innerHTML = infoLine;
-    // Contact link
-    const contactLink = document.createElement('a');
-    contactLink.href = 'contact.html';
-    contactLink.textContent = 'Contact Artist to Purchase';
-    contactLink.style.display = 'block';
-    contactLink.style.marginTop = '10px';
-    contactLink.style.color = '#fff';
-    contactLink.style.textDecoration = 'underline';
-    contactLink.style.fontSize = '1em';
-    contactLink.setAttribute('target', '_self');
-    label.appendChild(document.createElement('br'));
-    label.appendChild(contactLink);
+    const purchaseLink = `<a href="contact.html" style="color:#fff;text-decoration:underline;font-size:1em;" target="_self">Purchase</a>`;
+    label.innerHTML = infoLine + ' ' + purchaseLink;
     label.style.display = 'block';
   }
 
