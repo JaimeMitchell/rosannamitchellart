@@ -14,27 +14,102 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ===========================
-     Gallery Slideshow
-  =========================== */
 
-  const artImages = document.querySelectorAll('.art-box img');
+  /* ===========================
+     Dynamic Gallery Rendering
+  =========================== */
+  const artGrid = document.getElementById('art-grid');
+  let images = [];
+  let currentIndex = 0;
+
+  // Only run on gallery page
+  if (artGrid) {
+    fetch('gallery-images.json')
+      .then(response => response.json())
+      .then(data => {
+        // Support both array of filenames and array of objects
+        if (typeof data[0] === 'string') {
+          images = data.map(filename => ({ filename, title: '', medium: '', size: '', price: '', availability: '' }));
+        } else {
+          images = data;
+        }
+        // Render images
+        images.forEach((imgObj, idx) => {
+          const artBox = document.createElement('div');
+          artBox.className = 'art-box';
+          const img = document.createElement('img');
+          img.src = `assets/images/${imgObj.filename}`;
+          img.alt = imgObj.title || '';
+          img.tabIndex = 0;
+          img.addEventListener('click', () => openSlideshow(idx));
+          artBox.appendChild(img);
+          artGrid.appendChild(artBox);
+        });
+      });
+  } else {
+    // Fallback for other pages: try to get images from static HTML
+    images = Array.from(document.querySelectorAll('.art-box img')).map(img => ({ filename: img.src.split('/').pop(), title: '', medium: '', size: '', price: '', availability: '' }));
+  }
+
+  // Slideshow elements
   const slideshow = document.getElementById('slideshow');
   const slideshowImg = document.getElementById('slideshow-img');
   const closeBtn = document.querySelector('.close-btn');
   const nextBtn = document.querySelector('.next');
   const prevBtn = document.querySelector('.prev');
 
-  if (!slideshow || artImages.length === 0) return;
+  // Helper to get a title from the image filename
+  function getTitleFromFilename(filename) {
+    const file = filename.split('.')[0];
+    return file.replace(/[_-]+/g, ' ').replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+  }
 
-  let currentIndex = 0;
-  const images = Array.from(artImages).map(img => img.src);
+  // Add or update info label below the slideshow image (all info in one line)
+  function updateSlideshowInfo() {
+    let label = document.getElementById('slideshow-info-label');
+    if (!label) {
+      label = document.createElement('div');
+      label.id = 'slideshow-info-label';
+      label.style.fontFamily = 'inherit';
+      label.style.fontSize = '1.1em';
+      label.style.textAlign = 'center';
+      label.style.padding = '16px 0 0 0';
+      label.style.whiteSpace = 'normal';
+      slideshowImg.insertAdjacentElement('afterend', label);
+    }
+    // Always clear and update label
+    label.innerHTML = '';
+    const imgObj = images[currentIndex];
+    const title = imgObj.title && imgObj.title.trim() ? imgObj.title : getTitleFromFilename(imgObj.filename);
+    const infoParts = [title];
+    if (imgObj.medium && imgObj.medium.trim()) infoParts.push(imgObj.medium);
+    if (imgObj.size && imgObj.size.trim()) infoParts.push(imgObj.size);
+    if (imgObj.price && imgObj.price.trim()) infoParts.push(imgObj.price);
+    if (imgObj.availability && imgObj.availability.trim()) infoParts.push(imgObj.availability);
+    const infoLine = infoParts.join(', ');
+    // Info line
+    label.innerHTML = infoLine;
+    // Contact link
+    const contactLink = document.createElement('a');
+    contactLink.href = 'contact.html';
+    contactLink.textContent = 'Contact Artist to Purchase';
+    contactLink.style.display = 'block';
+    contactLink.style.marginTop = '10px';
+    contactLink.style.color = '#fff';
+    contactLink.style.textDecoration = 'underline';
+    contactLink.style.fontSize = '1em';
+    contactLink.setAttribute('target', '_self');
+    label.appendChild(document.createElement('br'));
+    label.appendChild(contactLink);
+    label.style.display = 'block';
+  }
 
   function openSlideshow(index) {
     currentIndex = index;
-    slideshowImg.src = images[currentIndex];
+    slideshowImg.src = `assets/images/${images[currentIndex].filename}`;
     slideshow.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    updateSlideshowInfo();
   }
 
   function closeSlideshow() {
@@ -44,72 +119,61 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
-    slideshowImg.src = images[currentIndex];
+    slideshowImg.src = `assets/images/${images[currentIndex].filename}`;
+    updateSlideshowInfo();
   }
 
   function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    slideshowImg.src = images[currentIndex];
+    slideshowImg.src = `assets/images/${images[currentIndex].filename}`;
+    updateSlideshowInfo();
   }
 
-  // Open slideshow
-  artImages.forEach((img, index) => {
-    img.addEventListener('click', () => openSlideshow(index));
-  });
-
-  // ONLY the X closes
   if (closeBtn) {
     closeBtn.addEventListener('click', closeSlideshow);
   }
-
-  // Arrow buttons
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       nextImage();
     });
   }
-
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       prevImage();
     });
   }
-
-  // Keyboard support
   document.addEventListener('keydown', (e) => {
-    if (slideshow.style.display === 'flex') {
+    if (slideshow && slideshow.style.display === 'flex') {
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
       if (e.key === 'Escape') closeSlideshow();
     }
   });
 
-  /* ===========================
-     Touch Swipe Support
-  =========================== */
-
+  // Touch Swipe Support
   let touchStartX = 0;
   let touchEndX = 0;
   const swipeThreshold = 50;
-
-  slideshow.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  slideshow.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-
+  if (slideshow) {
+    slideshow.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    slideshow.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
   function handleSwipe() {
     const distance = touchEndX - touchStartX;
-
     if (Math.abs(distance) > swipeThreshold) {
       if (distance < 0) nextImage();
       else prevImage();
     }
   }
+
+  // End Dynamic Gallery
+
 
 });

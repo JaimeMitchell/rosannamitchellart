@@ -1,25 +1,186 @@
 [
-  "Brendas_Garden.jpg",
-  "Hopes_Garden-Edit.jpg",
-  "In_The_Light-Edit.jpg",
-  "Leslies_Garden.jpg",
-  "Stony_Creek_Trail_1.jpg",
-  "Stony_Creek_Trail_2.jpg",
-  "Stony_Creek_Trail_3.jpg",
-  "Sunflower_12x12.jpg",
-  "SunflowerandCorepsis.jpg",
-  "The_Three_Sisters-Edit.jpg",
-  "Thinking_of_Charlie.jpg",
-  "Tide_Pool_1.jpg",
-  "Vitos_Garden.jpg",
-  "balance-2.jpg",
-  "flatcreek.jpg",
-  "joes_garden.jpg",
-  "poppies_on_trail.jpg",
-  "southpark.jpg",
-  "treeo-1.jpg",
-  "treeo-2.jpg",
-  "triptych-Black.jpg",
-  "westwoods.jpg",
-  "wilson_dike.jpg"
+  {
+    "filename": "Brendas_Garden.jpg",
+    "title": "Brendas Garden",
+    "medium": "Charcoal on paper",
+    "size": "12\"x12\"in",
+    "price": "$1000",
+    "availability": "Available"
+  },
+  {
+    "filename": "Hopes_Garden-Edit.jpg",
+    "title": "Hopes Garden Edit",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "In_The_Light-Edit.jpg",
+    "title": "In The Light Edit",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Leslies_Garden.jpg",
+    "title": "Leslies Garden",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Stony_Creek_Trail_1.jpg",
+    "title": "Stony Creek Trail 1",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Stony_Creek_Trail_2.jpg",
+    "title": "Stony Creek Trail 2",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Stony_Creek_Trail_3.jpg",
+    "title": "Stony Creek Trail 3",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Sunflower_12x12.jpg",
+    "title": "Sunflower 12x12",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "SunflowerandCorepsis.jpg",
+    "title": "Sunflowerandcorepsis",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "The_Three_Sisters-Edit.jpg",
+    "title": "The Three Sisters Edit",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Thinking_of_Charlie.jpg",
+    "title": "Thinking Of Charlie",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Tide_Pool_1.jpg",
+    "title": "Tide Pool 1",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "Vitos_Garden.jpg",
+    "title": "Vitos Garden",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "balance-2.jpg",
+    "title": "Balance 2",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "flatcreek.jpg",
+    "title": "Flatcreek",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "joes_garden.jpg",
+    "title": "Joes Garden",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "poppies_on_trail.jpg",
+    "title": "Poppies On Trail",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "southpark.jpg",
+    "title": "Southpark",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "treeo-1.jpg",
+    "title": "Treeo 1",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "treeo-2.jpg",
+    "title": "Treeo 2",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "triptych-Black.jpg",
+    "title": "Triptych Black",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "westwoods.jpg",
+    "title": "Westwoods",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  },
+  {
+    "filename": "wilson_dike.jpg",
+    "title": "Wilson Dike",
+    "medium": "",
+    "size": "",
+    "price": "",
+    "availability": ""
+  }
 ]
