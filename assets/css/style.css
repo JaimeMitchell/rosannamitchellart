@@ -183,12 +183,18 @@ footer {
     font-size: 1.1em;
     color: #fff;
     text-align: center;
-    margin-top: 6px;
-    margin-bottom: 2px;
+    margin-top: 5px;
+    margin-bottom: 3px;
     max-width: 99vw;
     word-break: break-word;
     background: none;
     padding: 0 4px;
+}
+@media (max-width: 768px) {
+    .slideshow-overlay img {
+        max-height: 65vh;
+        object-fit: contain;
+    }
 }
 
 /* Close button */
