@@ -9,22 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.querySelector("nav ul");
 
   if (toggle) {
-    toggle.addEventListener("click", function (e) {
+    toggle.addEventListener("click", function () {
       menu.classList.toggle("show");
-      e.stopPropagation();
-    });
-
-    // Close menu when clicking outside or on a menu link (mobile only)
-    document.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768 && menu.classList.contains("show")) {
-        if (!menu.contains(e.target) && e.target !== toggle) {
-          menu.classList.remove("show");
-        }
-        // If a menu link is clicked, close menu
-        if (e.target.tagName === "A" && menu.contains(e.target)) {
-          menu.classList.remove("show");
-        }
-      }
     });
   }
 
@@ -112,12 +98,24 @@ document.addEventListener("DOMContentLoaded", function () {
     slideshowImg.src = `assets/images/${images[currentIndex].filename}`;
     slideshow.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    // Prevent background scroll on mobile
+    if (slideshow) {
+      slideshow.addEventListener('touchmove', preventScroll, { passive: false });
+    }
     updateSlideshowInfo();
+  }
+
+  function preventScroll(e) {
+    e.preventDefault();
   }
 
   function closeSlideshow() {
     slideshow.style.display = 'none';
     document.body.style.overflow = 'auto';
+    // Remove scroll lock on close
+    if (slideshow) {
+      slideshow.removeEventListener('touchmove', preventScroll, { passive: false });
+    }
   }
 
   function nextImage() {
