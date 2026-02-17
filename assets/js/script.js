@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (imgObj.availability && imgObj.availability.trim()) infoParts.push(imgObj.availability);
     // Add purchase link at the end
     const infoLine = infoParts.join(', ');
-    const purchaseLink = `<a href="contact.html" style="color:#fff;text-decoration:underline;font-size:1em;" target="_self">Purchase</a>`;
+    const purchaseLink = `<a href="contact.html" style="color:#fff;text-decoration:underline;font-size:1em;" target="_self">Info</a>`;
     label.innerHTML = infoLine + ' ' + purchaseLink;
     label.style.display = 'block';
   }
