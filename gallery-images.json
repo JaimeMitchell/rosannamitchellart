@@ -10,10 +10,10 @@
   {
     "filename": "Vitos_Garden.jpg",
     "title": "Vito's Garden",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
+    "medium": "Acrylic on Canvas",
+    "size": "16\"x20\"",
+    "price": "$750",
+    "availability": "Sold, Prints Available"
   },
   {
     "filename": "Hopes_Garden.jpg",
@@ -106,34 +106,34 @@
   {
     "filename": "balance-2.jpg",
     "title": "Balance 2",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
+    "medium": "Acrylic Collage with Handmade Paper on Board",
+    "size": "20\"x30\"",
+    "price": "$1500",
+    "availability": "Sold, Prints Available"
   },
   {
-    "filename": "flatcreek.jpg",
-    "title": "Flatcreek",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
+    "filename": "rivers_edge.jpg",
+    "title": "River's Edge",
+    "medium": "Ink on Watercolor Paper",
+    "size": "21\"x18\"",
+    "price": "$650",
+    "availability": "Sold, Prints Available"
   },
   {
     "filename": "joes_garden.jpg",
-    "title": "Joes Garden",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
+    "title": "Joe's Garden",
+    "medium": "Ink Collage on Yupo Paper",
+    "size": "15\"x19\"",
+    "price": "$650",
+    "availability": "Original & Prints Available"
   },
   {
     "filename": "poppies_on_trail.jpg",
     "title": "Poppies On Trail",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
+    "medium": "Acrylic & Ink Collage on Wood Cradle",
+    "size": "12\"x12\"",
+    "price": "$300",
+    "availability": "Original & Prints Available"
   },
   {
     "filename": "southpark.jpg",
