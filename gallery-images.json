@@ -131,56 +131,48 @@
     "filename": "poppies_on_trail.jpg",
     "title": "Poppies On Trail",
     "medium": "Acrylic & Ink Collage on Wood Cradle",
-    "size": "12\"x12\"",
-    "price": "$300",
+    "size": "12\"x24\"",
+    "price": "$400",
+    "availability": "Original Available"
+  },
+  {
+    "filename": "willowcreek.jpg",
+    "title": "Willow Creek",
+    "medium": "Soft Pastel on Paper",
+    "size": "12\"x8\"",
+    "price": "$350",
+    "availability": "Original Available"
+  },
+  {
+    "filename": "treeo.jpg",
+    "title": "Treeo",
+    "medium": "Mixed Media Collage on Paper",
+    "size": "19\"x25\"",
+    "price": "600",
+    "availability": "Original Available"
+  },
+  {
+    "filename": "sleeping_indian.jpg",
+    "title": "Sleeping Indian",
+    "medium": "Oil and Pastel on Canvas",
+    "size": "60\"x40\"",
+    "price": "$2400",
     "availability": "Original & Prints Available"
-  },
-  {
-    "filename": "southpark.jpg",
-    "title": "Southpark",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
-  },
-  {
-    "filename": "treeo-1.jpg",
-    "title": "Treeo 1",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
-  },
-  {
-    "filename": "treeo-2.jpg",
-    "title": "Treeo 2",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
-  },
-  {
-    "filename": "triptych-Black.jpg",
-    "title": "Triptych Black",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
   },
   {
     "filename": "westwoods.jpg",
     "title": "Westwoods",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
+    "medium": "Soft Pastel on Paper",
+    "size": "14\"x11\"",
+    "price": "$400",
+    "availability": "Original Available"
   },
   {
     "filename": "wilson_dike.jpg",
     "title": "Wilson Dike",
-    "medium": "",
-    "size": "",
-    "price": "",
-    "availability": ""
+    "medium": "Soft Pastel on Paper",
+    "size": "8\"x12\"",
+    "price": "$400",
+    "availability": "Original Available"
   }
 ]
