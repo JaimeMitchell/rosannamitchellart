@@ -33,13 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           images = data;
         }
-        // Render images
+        // Render images with SEO-optimized alt text
         images.forEach((imgObj, idx) => {
           const artBox = document.createElement('div');
           artBox.className = 'art-box';
           const img = document.createElement('img');
           img.src = `assets/images/${imgObj.filename}`;
-          img.alt = imgObj.title || '';
+          // Enhanced SEO Alt Text: "Title: Medium by Rosanna Mitchell"
+          const title = imgObj.title || getTitleFromFilename(imgObj.filename);
+          const medium = imgObj.medium ? imgObj.medium : '';
+          img.alt = `${title}: ${medium} by Rosanna Mitchell`;
           img.tabIndex = 0;
           img.addEventListener('click', () => openSlideshow(idx));
           artBox.appendChild(img);
@@ -95,7 +98,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openSlideshow(index) {
     currentIndex = index;
-    slideshowImg.src = `assets/images/${images[currentIndex].filename}`;
+    const imgObj = images[currentIndex];
+    slideshowImg.src = `assets/images/${imgObj.filename}`;
+    // Set alt text using metadata
+    const title = imgObj.title || getTitleFromFilename(imgObj.filename);
+    const medium = imgObj.medium ? imgObj.medium : '';
+    slideshowImg.alt = `${title}: ${medium} by Rosanna Mitchell`;
     slideshow.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     // Prevent background scroll on mobile
@@ -120,13 +128,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
-    slideshowImg.src = `assets/images/${images[currentIndex].filename}`;
+    const imgObj = images[currentIndex];
+    slideshowImg.src = `assets/images/${imgObj.filename}`;
+    const title = imgObj.title || getTitleFromFilename(imgObj.filename);
+    const medium = imgObj.medium ? imgObj.medium : '';
+    slideshowImg.alt = `${title}: ${medium} by Rosanna Mitchell`;
     updateSlideshowInfo();
   }
 
   function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    slideshowImg.src = `assets/images/${images[currentIndex].filename}`;
+    const imgObj = images[currentIndex];
+    slideshowImg.src = `assets/images/${imgObj.filename}`;
+    const title = imgObj.title || getTitleFromFilename(imgObj.filename);
+    const medium = imgObj.medium ? imgObj.medium : '';
+    slideshowImg.alt = `${title}: ${medium} by Rosanna Mitchell`;
     updateSlideshowInfo();
   }
 
