@@ -1,3 +1,15 @@
+/* Contact page: make mailto and tel links purple and prominent */
+.contact-page a[href^="mailto"],
+.contact-page a[href^="tel"] {
+    color: #7c3aed;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.contact-page a[href^="mailto"]:hover,
+.contact-page a[href^="tel"]:hover {
+    color: #5b21b6;
+}
 /* Gallery label styling */
 .gallery-label {
     font-family: inherit;
