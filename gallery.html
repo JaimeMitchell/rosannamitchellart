@@ -3,26 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery - Rosanna Mitchell</title>
 
-  <title>Gallery | Mixed Media & Botanical Artwork by Rosanna Mitchell</title>
+  <meta name="description" content="Original mixed media, botanical, landscape, and floral artwork by Rosanna Mitchell. View available pieces in the gallery.">
 
-  <meta name="description" content="Explore original mixed media, botanical, ink, watercolor, acrylic, pastel, and handmade paper artworks by Rosanna Mitchell. Fine art available for collectors nationwide.">
-
-  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://rosannamitchell.com/gallery.html">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Gallery | Rosanna Mitchell">
-  <meta property="og:description" content="Original mixed media and botanical artwork available for collectors.">
-  <meta property="og:url" content="https://rosannamitchell.com/gallery.html">
-
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- VisualArtwork Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VisualArtwork",
+    "name": "Rosanna Mitchell Gallery",
+    "creator": {
+      "@type": "Person",
+      "name": "Rosanna Mitchell"
+    },
+    "artform": ["Mixed Media Art", "Botanical Art", "Landscape Art", "Floral Art"],
+    "locationCreated": "Guilford, CT",
+    "description": "A curated collection of original mixed media, botanical, and landscape artworks by Rosanna Mitchell, including works like Brenda's Garden and Stony Creek Trail."
+  }
+  </script>
 </head>
-
 <body>
-
 <header>
-  <h1>Gallery</h1>
+  <h1>Rosanna Mitchell Art</h1>
   <span class="main-menu-toggle" aria-label="Open menu" tabindex="0">&#9776;</span>
   <nav>
     <ul>
@@ -36,44 +43,22 @@
 </header>
 
 <main>
-
-  <!-- Intro Authority Section -->
-  <section style="text-align:center; margin:2em 0 1.5em 0;">
-    <p style="font-size:1.05em; max-width:700px; margin:0 auto;">
-      Original mixed media, botanical, ink, watercolor, acrylic, pastel, and handmade paper artworks by Rosanna Mitchell. Each piece explores layered texture, color relationships, and the expressive forms of the natural world.
-    </p>
+  <section class="art-grid" id="art-grid">
+    <!-- Images will be dynamically inserted here by script.js -->
   </section>
-
-  <!-- Artwork Grid -->
-  <section class="gallery-grid">
-
-    <figure>
-      <img src="assets/images/Brendas_Garden.jpg" 
-           alt="Brenda's Garden, botanical mixed media artwork with ink and layered watercolor by Rosanna Mitchell">
-      <figcaption>
-        <strong>Brenda's Garden</strong><br>
-        Mixed media with ink and layered watercolor<br>
-        Available
-      </figcaption>
-    </figure>
-
-    <!-- Duplicate this block per artwork -->
-    <!-- Replace filenames + details accordingly -->
-
-  </section>
-
-  <!-- Collector Call To Action -->
-  <section style="text-align:center; margin:2.5em 0;">
-    <p>
-      For purchase inquiries, pricing, or availability, please <a href="contact.html">contact the artist</a>.
-    </p>
-  </section>
-
 </main>
 
 <footer>
   <p>&copy; 2026 Rosanna Mitchell</p>
 </footer>
+
+<!-- Slideshow Overlay -->
+<div id="slideshow" class="slideshow-overlay">
+  <span class="close-btn">&times;</span>
+  <span class="nav-btn prev">&#10094;</span>
+  <img id="slideshow-img" src="" alt="Artwork">
+  <span class="nav-btn next">&#10095;</span>
+</div>
 
 <script src="assets/js/script.js"></script>
 </body>
