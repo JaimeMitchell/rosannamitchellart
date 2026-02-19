@@ -1,3 +1,30 @@
+/* About page: center artist photo */
+.about-photo-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-artist-photo {
+    max-width: 350px;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+/* Centered section headings */
+.centered-heading {
+    text-align: center;
+}
+/* Workshops page main content section */
+.workshops-content {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+/* Contact page intro paragraph styling */
+.contact-page .contact-intro {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
 /* Contact page: make mailto and tel links purple and prominent */
 .contact-page a[href^="mailto"],
 .contact-page a[href^="tel"] {
