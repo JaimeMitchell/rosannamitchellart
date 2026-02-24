@@ -8,45 +8,70 @@
   <title>Art Workshops in Guilford CT | Mixed Media & Botanical Classes</title>
 
   <meta name="description"
-    content="Join mixed media and botanical art workshops in Guilford, Connecticut with artist Rosanna Mitchell. Seasonal art classes designed for all experience levels.">
+    content="Join mixed media and botanical art workshops in Guilford, Connecticut with artist Rosanna Mitchell. Seasonal art classes, private workshops, and corporate art events available.">
 
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://rosannamitchell.com/workshops.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rosanna Mitchell Art">
   <meta property="og:title" content="Art Workshops in Guilford CT | Rosanna Mitchell">
-  <meta property="og:description" content="Seasonal mixed media and botanical art workshops in Guilford, Connecticut.">
+  <meta property="og:description" content="Seasonal mixed media and botanical art workshops, private lessons, and corporate art events in Guilford, Connecticut.">
   <meta property="og:url" content="https://rosannamitchell.com/workshops.html">
+  <meta property="og:image" content="https://rosannamitchell.com/assets/images/workshop-preview.jpg">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Art Workshops in Guilford CT | Rosanna Mitchell">
+  <meta name="twitter:description" content="Seasonal mixed media and botanical art workshops, private lessons, and corporate art events in Guilford, Connecticut.">
+  <meta name="twitter:image" content="https://rosannamitchell.com/assets/images/workshop-preview.jpg">
 
-  <!-- Event Structured Data -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Mixed Media Botanical Art Workshop",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "Place",
-      "name": "Guilford, Connecticut",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Guilford",
-        "addressRegion": "CT",
-        "addressCountry": "US"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Art Workshops in Guilford CT | Mixed Media & Botanical Classes",
+        "url": "https://rosannamitchell.com/workshops.html",
+        "description": "Mixed media and botanical art workshops in Guilford, Connecticut led by artist Rosanna Mitchell.",
+        "isPartOf": {
+          "@id": "https://rosannamitchell.com/#website"
+        },
+        "about": {
+          "@id": "https://rosannamitchell.com/#person"
+        },
+        "creator": {
+          "@id": "https://rosannamitchell.com/#person"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://rosannamitchell.com/workshops.html#service",
+        "name": "Art Workshops, Private Lessons, and Corporate Events",
+        "provider": {
+          "@id": "https://rosannamitchell.com/#person"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Guilford, Connecticut"
+        },
+        "serviceType": [
+          "Mixed Media Workshops",
+          "Botanical Art Classes",
+          "Private Art Lessons",
+          "Private Workshops",
+          "Workshop Parties",
+          "Corporate Art Events"
+        ]
       }
-    },
-    "organizer": {
-      "@type": "Person",
-      "name": "Rosanna Mitchell",
-      "url": "https://rosannamitchell.com/"
-    }
+    ]
   }
   </script>
 
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -69,22 +94,23 @@
   <main>
     <section class="workshops-content">
       <h2 class="centered-heading">Art Workshops & Private Lessons</h2>
-      <p style="text-align:center; font-size:1.1em; max-width:650px; margin:0 auto 1.5em auto;">
+      <p class="workshop-intro">
         Join mixed media and botanical art workshops in Guilford, Connecticut. These seasonal art classes are designed for beginners through experienced artists and explore layered techniques, color development, and botanical composition techniques in a supportive studio environment. In the summer, Rosanna’s workshops feature ecoprinting and ice-dye on clothing and textiles.
       </p>
 
       <h2 class="centered-heading">Mixed Media and Botanical Art Classes in Guilford CT</h2>
-      <p style="text-align:center; max-width:650px; margin:0 auto 1em auto;">
-        Workshops and private classes are held in Guilford, CT and serve artists throughout the Connecticut shoreline and New Haven County.
+      <p class="workshop-desc">
+        Workshops and private classes are held in Guilford, CT and serve artists throughout the Connecticut shoreline
+        and New Haven County.
       </p>
 
-      <p style="text-align:center; max-width:650px; margin:0 auto 1em auto;">
+      <p class="workshop-desc">
         Participants develop skills in texture, color layering, and expressive botanical design while creating finished mixed media artwork. Small class sizes allow for individualized instruction and hands-on guidance.
       </p>
 
       <h2 class="centered-heading">Upcoming Workshops</h2>
-      <p style="text-align:center; max-width:650px; margin:0 auto 1em auto;">
-        Seasonal workshops are announced throughout the year. To receive upcoming dates, registration details, and materials information, please visit the <a href="contact.html" style="color:#008080; font-weight:500; text-decoration:underline;">contact</a> page.
+      <p class="workshop-desc">
+        Seasonal workshops are announced throughout the year. To receive upcoming dates, registration details, and materials information, please visit the <a href="contact.html" class="workshop-link">contact</a> page.
       </p>
     </section>
   </main>

@@ -4,30 +4,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery - Rosanna Mitchell</title>
+  <title>Gallery | Mixed Media & Botanical Art by Rosanna Mitchell</title>
 
   <meta name="description"
     content="Original mixed media, botanical, landscape, and floral artwork by Rosanna Mitchell. View available pieces in the gallery.">
 
-  <link rel="canonical" href="https://rosannamitchell.com/gallery.html">
+  <meta name="robots" content="index, follow">
 
+  <link rel="canonical" href="https://rosannamitchell.com/gallery.html">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- VisualArtwork Structured Data for SEO -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gallery - Rosanna Mitchell">
+  <meta property="og:description"
+    content="Original mixed media, botanical, landscape, and floral artwork by Rosanna Mitchell. View available pieces in the gallery.">
+  <meta property="og:url" content="https://rosannamitchell.com/gallery.html">
+  <meta property="og:image" content="https://rosannamitchell.com/assets/images/Brendas_Garden.jpg">
+  <meta property="og:site_name" content="Rosanna Mitchell Art">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gallery - Rosanna Mitchell">
+  <meta name="twitter:description"
+    content="Original mixed media, botanical, landscape, and floral artwork by Rosanna Mitchell. View available pieces in the gallery.">
+  <meta name="twitter:image" content="https://rosannamitchell.com/assets/images/Brendas_Garden.jpg">
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "VisualArtwork",
+    "@type": "CollectionPage",
     "name": "Rosanna Mitchell Gallery",
-    "creator": {
-      "@type": "Person",
-      "name": "Rosanna Mitchell"
+    "url": "https://rosannamitchell.com/gallery.html",
+    "description": "A curated collection of original mixed media, botanical, landscape, and floral artworks by Rosanna Mitchell.",
+    "artform": [
+      "Mixed Media Art",
+      "Botanical Art",
+      "Landscape Art",
+      "Floral Art"
+    ],
+    "isPartOf": {
+      "@id": "https://rosannamitchell.com/#website"
     },
-    "artform": ["Mixed Media Art", "Botanical Art", "Landscape Art", "Floral Art"],
-    "locationCreated": "Guilford, CT",
-    "description": "A curated collection of original mixed media, botanical, and landscape artworks by Rosanna Mitchell, including works like Brenda's Garden and Stony Creek Trail."
+    "about": {
+      "@id": "https://rosannamitchell.com/#person"
+    },
+    "creator": {
+      "@id": "https://rosannamitchell.com/#person"
+    }
   }
   </script>
+
 </head>
 
 <body>
@@ -46,13 +74,14 @@
   </header>
 
   <main>
-      <section class="gallery-page">
-        <h2 class="centered-heading">Gallery</h2>
-        <p style="text-align:center; max-width:650px; margin:0 auto 1em auto;">
-          Explore a curated selection of original work. Click on any artwork for a closer look and details about the piece.
-        </p>
-    <section class="art-grid" id="art-grid">
-      <!-- Images will be dynamically inserted here by script.js -->
+    <section class="gallery-page">
+      <h2 class="centered-heading">Gallery</h2>
+      <p class="gallery-desc">
+        Explore a curated selection of original work. Click on any artwork for a closer look and details about the piece.
+      </p>
+      <section class="art-grid" id="art-grid">
+        <!-- Images will be dynamically inserted here by script.js -->
+      </section>
     </section>
   </main>
 

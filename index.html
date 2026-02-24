@@ -5,11 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Rosanna Mitchell | Mixed Media, Botanical & Ink Artist</title>
-
+  <title>Rosanna Mitchell | Mixed Media & Botanical Artist</title>
   <meta name="description"
     content="Mixed media, botanical print, ink, watercolor, acrylic, pastel, and handmade paper artwork by Rosanna Mitchell. Featured in galleries across Connecticut, California, and Wyoming. Original art available for collectors nationwide.">
-
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://rosannamitchell.com/">
 
@@ -20,6 +18,14 @@
     content="Original mixed media, botanical, ink, and layered artwork available for collectors. Workshops offered in Guilford, Connecticut.">
   <meta property="og:url" content="https://rosannamitchell.com/">
   <meta property="og:image" content="https://rosannamitchell.com/assets/images/Brendas_Garden.jpg">
+  <meta property="og:site_name" content="Rosanna Mitchell Art">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rosanna Mitchell | Mixed Media & Botanical Artist">
+  <meta name="twitter:description"
+    content="Original mixed media, botanical, ink, and layered artwork available for collectors. Workshops offered in Guilford, Connecticut.">
+  <meta name="twitter:image" content="https://rosannamitchell.com/assets/images/Brendas_Garden.jpg">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -27,36 +33,46 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Person","VisualArtist"],
-    "name": "Rosanna Mitchell",
-    "url": "https://rosannamitchell.com/",
-    "jobTitle": "Mixed Media, Botanical and Ink Artist",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Guilford",
-      "addressRegion": "CT",
-      "addressCountry": "US"
-    },
-    "description": "Rosanna Mitchell is a mixed media and botanical artist working with watercolor, ink, acrylic, pastel, and handmade papers. Her layered artworks are featured in galleries across Connecticut, California, and Wyoming and are held in private collections.",
-    "knowsAbout": [
-      "Mixed Media Art",
-      "Botanical Printmaking",
-      "Collage Techniques",
-      "Layered Watercolor",
-      "Acrylic Techniques",
-      "Handmade Paper Art",
-      "Pastel Techniques",
-      "Ink Drawing",
-      "Botanical Art",
-      "Fine Art Prints"
-    ],
-    "sameAs": [
-      "https://www.instagram.com/rosannamitchellart/",
-      "https://www.facebook.com/rosanna.desariomitchell"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://rosannamitchell.com/#website",
+        "url": "https://rosannamitchell.com/",
+        "name": "Rosanna Mitchell Art"
+      },
+      {
+        "@type": ["Person","VisualArtist"],
+        "@id": "https://rosannamitchell.com/#person",
+        "name": "Rosanna Mitchell",
+        "url": "https://rosannamitchell.com/",
+        "jobTitle": "Mixed Media & Botanical Artist",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guilford",
+          "addressRegion": "CT",
+          "addressCountry": "US"
+        },
+        "description": "Rosanna Mitchell is a mixed media and botanical artist working with watercolor, ink, acrylic, pastel, and handmade papers. Her layered artworks are featured in galleries across Connecticut, California, and Wyoming and are held in private collections.",
+        "knowsAbout": [
+          "Mixed Media Art",
+          "Botanical Printmaking",
+          "Collage Techniques",
+          "Layered Watercolor",
+          "Acrylic Techniques",
+          "Handmade Paper Art",
+          "Pastel Techniques",
+          "Ink Drawing",
+          "Botanical Art",
+          "Fine Art Prints"
+        ],
+        "sameAs": [
+          "https://www.instagram.com/rosannamitchellart/",
+          "https://www.facebook.com/rosanna.desariomitchell"
+        ]
+      }
     ]
   }
   </script>
-
 </head>
 
 <body>
@@ -79,20 +95,19 @@
 
     <section class="hero">
       <img src="assets/images/Brendas_Garden.jpg"
-        alt="Brenda's Garden, botanical mixed media painting with ink and layered techniques by Rosanna Mitchell in Guilford, Connecticut">
+        alt="Brenda's Garden, botanical mixed media painting with ink and layered techniques by Rosanna Mitchell in Guilford, Connecticut"
+        width="1600" height="1000" loading="eager">
     </section>
 
-    <section style="text-align:center; margin:2em 0 1.5em 0;">
-      <p style="font-size:1.1em; max-width:650px; margin:0 auto;">
-        Original mixed media, botanical, ink, watercolor, acrylic, pastel, and handmade paper artworks by Rosanna
-        Mitchell are available for collectors across the United States and Canada. Her layered works explore texture,
-        color, and natural form, with shipping available throughout North America.
+    <section class="index-section-1">
+      <p class="index-section-1-desc">
+        Original mixed media, botanical, ink, watercolor, acrylic, pastel, and handmade paper artworks by Rosanna Mitchell are available for collectors across the United States and Canada. Her layered works explore texture, color, and natural form, with shipping available throughout North America.
       </p>
     </section>
 
     <!-- Authority Signal Without Repeating About Page -->
-    <section style="text-align:center; margin:1em 0 2em 0;">
-      <p style="max-width:650px; margin:0 auto;">
+    <section class="index-section-2">
+      <p class="index-section-2-desc">
         Featured in galleries across Connecticut, California, and Wyoming.
       </p>
     </section>
