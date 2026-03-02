@@ -1,0 +1,12 @@
+{
+  "name": "rosanna-mitchell-site-html",
+  "version": "1.0.0",
+  "description": "Rosanna Mitchell Art - Official Website",
+  "private": true,
+  "scripts": {
+    "generate-gallery": "node assets/js/generate-gallery-json.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

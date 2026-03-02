@@ -274,6 +274,7 @@ footer {
 .slideshow-overlay img {
     max-width: 99vw;
     max-height: 93vh;
+    max-height: 93dvh;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.5);
@@ -298,6 +299,7 @@ footer {
 @media (max-width: 768px) {
     .slideshow-overlay img {
         max-height: 65vh;
+        max-height: 65dvh;
         object-fit: contain;
     }
 }

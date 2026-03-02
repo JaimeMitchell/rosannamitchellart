@@ -9,8 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.querySelector("nav ul");
 
   if (toggle) {
-    toggle.addEventListener("click", function () {
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
       menu.classList.toggle("show");
+    });
+
+    // Close mobile menu when tapping outside
+    document.addEventListener("click", function () {
+      if (menu.classList.contains("show")) {
+        menu.classList.remove("show");
+      }
     });
   }
 
@@ -38,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const artBox = document.createElement('div');
           artBox.className = 'art-box';
           const img = document.createElement('img');
-          img.src = `assets/images/${imgObj.filename}`;
+          img.src = `assets/thumbnails/${imgObj.filename}`;
+          img.loading = 'lazy';
           // Enhanced SEO Alt Text: "Title: Medium by Rosanna Mitchell"
           const title = imgObj.title || getTitleFromFilename(imgObj.filename);
           const medium = imgObj.medium ? imgObj.medium : '';
