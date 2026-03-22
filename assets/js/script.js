@@ -105,21 +105,68 @@ document.addEventListener("DOMContentLoaded", function () {
     label.style.display = 'block';
   }
 
-  function openSlideshow(index) {
-    currentIndex = index;
+  let activeSlideRequest = 0;
+
+  function preloadImage(index) {
+    if (!images.length) return;
+    const normalizedIndex = (index + images.length) % images.length;
+    const imgObj = images[normalizedIndex];
+    if (!imgObj) return;
+    const preloaded = new Image();
+    preloaded.src = `assets/slideshow/${imgObj.filename}`;
+    preloaded.onerror = function () {
+      const fallbackPreload = new Image();
+      fallbackPreload.src = `assets/images/${imgObj.filename}`;
+    };
+  }
+
+  function renderCurrentSlide() {
     const imgObj = images[currentIndex];
-    slideshowImg.src = `assets/images/${imgObj.filename}`;
-    // Set alt text using metadata
+    if (!imgObj) return;
+
     const title = imgObj.title || getTitleFromFilename(imgObj.filename);
     const medium = imgObj.medium ? imgObj.medium : '';
+    const previewSrc = `assets/thumbnails/${imgObj.filename}`;
+    const slideshowSrc = `assets/slideshow/${imgObj.filename}`;
+    const fallbackSrc = `assets/images/${imgObj.filename}`;
+    const requestId = ++activeSlideRequest;
+
     slideshowImg.alt = `${title}: ${medium} by Rosanna Mitchell`;
+    slideshowImg.src = previewSrc;
+    updateSlideshowInfo();
+
+    const highResLoader = new Image();
+    highResLoader.onload = function () {
+      if (requestId !== activeSlideRequest) return;
+      slideshowImg.src = slideshowSrc;
+      preloadImage(currentIndex + 1);
+      preloadImage(currentIndex - 1);
+    };
+
+    highResLoader.onerror = function () {
+      if (requestId !== activeSlideRequest) return;
+      const fallbackLoader = new Image();
+      fallbackLoader.onload = function () {
+        if (requestId !== activeSlideRequest) return;
+        slideshowImg.src = fallbackSrc;
+        preloadImage(currentIndex + 1);
+        preloadImage(currentIndex - 1);
+      };
+      fallbackLoader.src = fallbackSrc;
+    };
+
+    highResLoader.src = slideshowSrc;
+  }
+
+  function openSlideshow(index) {
+    currentIndex = index;
+    renderCurrentSlide();
     slideshow.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     // Prevent background scroll on mobile
     if (slideshow) {
       slideshow.addEventListener('touchmove', preventScroll, { passive: false });
     }
-    updateSlideshowInfo();
   }
 
   function preventScroll(e) {
@@ -137,22 +184,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
-    const imgObj = images[currentIndex];
-    slideshowImg.src = `assets/images/${imgObj.filename}`;
-    const title = imgObj.title || getTitleFromFilename(imgObj.filename);
-    const medium = imgObj.medium ? imgObj.medium : '';
-    slideshowImg.alt = `${title}: ${medium} by Rosanna Mitchell`;
-    updateSlideshowInfo();
+    renderCurrentSlide();
   }
 
   function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    const imgObj = images[currentIndex];
-    slideshowImg.src = `assets/images/${imgObj.filename}`;
-    const title = imgObj.title || getTitleFromFilename(imgObj.filename);
-    const medium = imgObj.medium ? imgObj.medium : '';
-    slideshowImg.alt = `${title}: ${medium} by Rosanna Mitchell`;
-    updateSlideshowInfo();
+    renderCurrentSlide();
   }
 
   if (closeBtn) {
