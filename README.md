@@ -1,7 +1,5 @@
-Website for artist Rosanna Mitchell, built with HTML, CSS, and JavaScript, and hosted on GitHub Pages at
-https://jaimemitchell.github.io/rosannamitchellart/
-
-
+Website for artist Rosanna Mitchell, built with HTML, CSS, and JavaScript: 
+https://rosannamitchell.com
 
 # Dynamic Gallery for GitHub Pages
 
